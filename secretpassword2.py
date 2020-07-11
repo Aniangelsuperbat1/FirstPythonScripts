@@ -3,15 +3,17 @@
 # after 3 gusses tyep "try again in 10 years"
 
 secret_password = "python"
+count = 0
 guess_taken = 3
-guess_taken = guess_taken + 1
-print("what is the password:")
+correct_guess = False
 
-while guess_taken != secret_password:
-    input()
-    if guess_taken != secret_password:
+while count < guess_taken:
+    user_input = input("what is the password:")
+    count = count + 1
+    if user_input != secret_password:
         print("invaild password, please try again")
-    elif guess_taken == secret_password:
+    elif user_input == secret_password:
+        correct_guess = True
         break
-    else:
-        print("try again in 10 years")
+if correct_guess == False:
+    print("try again in 10 years")
